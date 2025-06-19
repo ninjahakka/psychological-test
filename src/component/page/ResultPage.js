@@ -102,7 +102,7 @@ export default function ResultPage() {
               <h3>
                 藝術...就是爆炸！<br />
                 我生來的使命，<br />
-                就是製造破壞，<br />
+                就是製造混亂，<br />
                 哈哈哈哈哈！
               </h3>
           </>       

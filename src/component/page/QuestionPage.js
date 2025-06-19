@@ -2,8 +2,8 @@
 
 import MobileFrame from "@/component/layout/MobileFrame";
 import Image from "next/image";
-import q1Up from '@/../public/1.question/croissant-q1-up.png';
-import q1Down from '@/../public/1.question/croissant-q1-down.png';
+import q1Up from '@/../public/1.question/axo.png';
+import q1Down from '@/../public/1.question/axo2.png';
 import blurCircle1 from '@/../public/1.question/blurCircle-2.png';
 import blurCircle2 from '@/../public/1.question/blurCircle-3.png';
 import blurCircle3 from '@/../public/1.question/blurCircle-4.png';
@@ -54,8 +54,8 @@ export default function QuestionPage({questionIndex, nextStep}) {
         <Image className="absolute top-0 -translate-y-1/2" src={blurCircle3} alt='circleImg' />
         } */}
 
+          <Image src={q1Up} className="w-[88px] absolute top-5 " alt='q1Up'/>
         <div className=" flex flex-col items-center gap-[26px]">
-          <Image src={q1Up} className="w-[88px]" alt='q1Up'/>
 
           <div className="text-[#90B62A] border-2 border-[#90B62A] rounded-full w-[48px] h-[48px] 
           flex justify-center items-center font-bold text-xl ">
@@ -127,7 +127,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
 {
                   questionIndex == 4 &&
                   <div 
-                    className={` bg-[url('/1.question/dirt.jpg')] w-full h-14 rounded-full text-white 
+                    className={` bg-[url('/1.question/dirt2.jpg')] w-full h-14 rounded-full text-white 
                       py-[16px] text-sm flex justify-center items-center font-medium 
                       shadow-[0px_4px_0px_1px_#593D29] cursor-pointer hover:translate-y-0.5 transition text-center`}
                     
@@ -143,7 +143,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
 
           }
 
-          <Image src={q1Down} className="w-[88px]" alt='q1Down'/>
+          {/* <Image src={q1Down} className="w-[88px]" alt='q1Down'/> */}
 
           {/* {
             questionIndex == 0 &&
@@ -160,7 +160,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
 
 
         </div>
-
+        <Image src={q1Down} className="w-[88px] absolute bottom-2" alt='q1Down'/>
         
       </MobileFrame>
 
