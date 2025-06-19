@@ -8,6 +8,7 @@ import blurCircle1 from '@/../public/1.question/blurCircle-2.png';
 import blurCircle2 from '@/../public/1.question/blurCircle-3.png';
 import blurCircle3 from '@/../public/1.question/blurCircle-4.png';
 import { usePsyStore, useQuestionStore } from "@/app/store/store";
+import { useRef } from 'react';
 
 
 export default function QuestionPage({questionIndex, nextStep}) {
@@ -36,10 +37,23 @@ export default function QuestionPage({questionIndex, nextStep}) {
     return colorString;
   }
 
+  const hoverCooldown = useRef(false);
+
+  const handleHover = () => {
+    if (hoverCooldown.current) return;
+    hoverCooldown.current = true;
+    const audio = new Audio('/sounds/grass.mp3');
+    audio.play();
+
+    setTimeout(() => {
+      hoverCooldown.current = false;
+    }, 100); // 半秒內不重複播
+  };
+
   return (
     <>
       <MobileFrame>
-        {
+        {/* {
           questionIndex == 0 &&
         <Image className="absolute top-0 -translate-y-1/2" src={blurCircle1} alt='circleImg' />
         }
@@ -50,7 +64,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
         {
           questionIndex == 2 &&
         <Image className="absolute top-0 -translate-y-1/2" src={blurCircle3} alt='circleImg' />
-        }
+        } */}
 
         <div className=" flex flex-col items-center gap-[26px]">
           <Image src={q1Up} className="w-[88px]" alt='q1Up'/>
@@ -78,6 +92,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
                       shadow-[0px_4px_0px_1px_#966C4A] cursor-pointer hover:translate-y-0.5 transition`}
                     
                     onClick={() => clickAnswer(option)}
+                    onMouseEnter={handleHover}
                     key ={option.title + "green"}
                   > {option.title} </div>
                 }
@@ -138,7 +153,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
 
           <Image src={q1Down} className="w-[88px]" alt='q1Down'/>
 
-          {
+          {/* {
             questionIndex == 0 &&
           <Image className="absolute bottom-0 translate-y-1/2 pointer-events-none" src={blurCircle1} alt='circleImg' />
           }
@@ -149,7 +164,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
           {
             questionIndex == 2 &&
           <Image className="absolute bottom-0 translate-y-1/2 pointer-events-none" src={blurCircle3} alt='circleImg' />
-          }
+          } */}
 
 
         </div>
