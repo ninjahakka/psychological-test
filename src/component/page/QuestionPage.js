@@ -9,6 +9,7 @@ import blurCircle2 from '@/../public/1.question/blurCircle-3.png';
 import blurCircle3 from '@/../public/1.question/blurCircle-4.png';
 import { usePsyStore, useQuestionStore } from "@/app/store/store";
 import { useRef } from 'react';
+import { playHoverSound } from '@/utils/playSound';
 
 
 export default function QuestionPage({questionIndex, nextStep}) {
@@ -36,19 +37,6 @@ export default function QuestionPage({questionIndex, nextStep}) {
     }
     return colorString;
   }
-
-  const hoverCooldown = useRef(false);
-
-  const handleHover = () => {
-    if (hoverCooldown.current) return;
-    hoverCooldown.current = true;
-    const audio = new Audio('/sounds/grass.mp3');
-    audio.play();
-
-    setTimeout(() => {
-      hoverCooldown.current = false;
-    }, 100); // 半秒內不重複播
-  };
 
   return (
     <>
@@ -92,7 +80,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
                       shadow-[0px_4px_0px_1px_#966C4A] cursor-pointer hover:translate-y-0.5 transition`}
                     
                     onClick={() => clickAnswer(option)}
-                    onMouseEnter={handleHover}
+                    onMouseEnter={() => playHoverSound('A')}
                     key ={option.title + "green"}
                   > {option.title} </div>
                 }
@@ -105,6 +93,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
                       shadow-[0px_4px_0px_1px_#656565] cursor-pointer hover:translate-y-0.5 transition text-center`}
                     
                     onClick={() => clickAnswer(option)}
+                    onMouseEnter={() => playHoverSound('B')}
                     key ={option.title + "red"}
                   > {option.title} </div>
                 }
@@ -117,6 +106,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
                       shadow-[0px_4px_0px_1px_#755C33] cursor-pointer hover:translate-y-0.5 transition`}
                     
                     onClick={() => clickAnswer(option)}
+                    onMouseEnter={() => playHoverSound('C')}
                     key ={option.title + "blue"}
                   > {option.title} </div>
                 }
@@ -129,6 +119,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
                       shadow-[0px_4px_0px_1px_#656565] cursor-pointer hover:translate-y-0.5 transition`}
                     
                     onClick={() => clickAnswer(option)}
+                    onMouseEnter={() => playHoverSound('B')}
                     key ={option.title + "purple"}
                   > {option.title} </div>
                 }
@@ -141,6 +132,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
                       shadow-[0px_4px_0px_1px_#593D29] cursor-pointer hover:translate-y-0.5 transition text-center`}
                     
                     onClick={() => clickAnswer(option)}
+                    onMouseEnter={() => playHoverSound('A')}
                     key ={option.title + "black"}
                   > {option.title} </div>
                 }
