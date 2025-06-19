@@ -20,9 +20,6 @@ export default function QuestionPage({questionIndex, nextStep}) {
     nextStep();
     psyData.updateScore(psyData.score + option.value);
     console.log(option.title, option.value);
-
-    const audio = new Audio('/sounds/click.mp3');
-    audio.play();
     
   }
 

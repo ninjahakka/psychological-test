@@ -39,8 +39,18 @@ export default function StartPage({nextStep}) {
           窺探你內心的深處，<br />
           到底長個什麼樣吧！
           </div>
-          <Image className="w-[160px] cursor-pointer hover:translate-y-0.5 transition" onClick={nextStep} src={startBtn} alt='startBtn'></Image>
+          {/* <Image className="w-[160px] cursor-pointer hover:translate-y-0.5 transition" onClick={nextStep} src={startBtn} alt='startBtn'></Image> */}
           {/* <Image className="absolute bottom-0 translate-y-1/2 pointer-events-none" src={blurCircle} alt='circleImg' /> */}
+
+          
+          <div 
+            className={` bg-[url('/1.question/grass.png')] w-30 rounded-full text-white 
+            py-[16px] text-sm flex justify-center items-center font-medium 
+            shadow-[0px_4px_0px_1px_#593D29] cursor-pointer hover:translate-y-0.5 transition`}
+                      
+            onClick={nextStep}
+
+            >START</div>
         </div>
       </MobileFrame>
     </>

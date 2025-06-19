@@ -35,6 +35,9 @@ export default function Croissant() {
       psyState.updateState(psyState.state + 1);
     }
 
+    const audio = new Audio('/sounds/click.mp3');
+    audio.play();
+
   }
 
   const prevStep = function(){

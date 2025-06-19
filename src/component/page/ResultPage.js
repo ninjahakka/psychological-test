@@ -15,6 +15,8 @@ export default function ResultPage() {
 
   const playAgain = function(){
     window.location.reload();
+    const audio = new Audio('/sounds/click.mp3');
+    audio.play();
   }
 
   return (
